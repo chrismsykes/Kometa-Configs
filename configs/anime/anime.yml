@@ -1,0 +1,35 @@
+######################################################
+#                   TV Collections                   #
+######################################################
+
+templates:
+  collection:
+    optional:
+      - show
+      - tvdb
+      - tvdbshow
+      - trakt
+      - imdb
+      - sort
+    tmdb_show: <<show>>
+    tvdb_show: <<tvdbshow>>
+    tvdb_list_details: https://thetvdb.com/lists/<<tvdb>>
+    trakt_list_details: https://trakt.tv/users/<<trakt>>
+    imdb_id: <<imdb>>
+    sort_title: <<sort>>
+
+collections:
+  Trakt Recommendations:
+    trakt_recommendations: 30
+    collection_order: custom
+    sync_mode: sync
+  Top Anime TV Series:
+    mal_tv: 20
+    collection_order: custom
+    sync_mode: sync
+  AniDB Popular:
+    anidb_popular: 30
+    collection_order: custom
+    sync_mode: sync
+
+

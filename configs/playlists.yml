@@ -22,3 +22,9 @@ playlists:
   South Park Top 100 Episodes:
     template: {name: top, imdb: tt0121955}
     summary: Top 100 episodes of South Park based on IMDb user rating.
+  Family Guy Top 100 Episodes:
+    template: {name: top, imdb: tt0182576}
+    summary: Top 100 episodes of South Park based on IMDb user rating.
+  American Dad Top 100 Episodes:
+    template: {name: top, imdb: tt0397306}
+    summary: Top 100 episodes of South Park based on IMDb user rating.

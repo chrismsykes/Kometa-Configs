@@ -23,7 +23,7 @@ libraries:
         asset_directory: config/assets/seasonal
     remove_overlays: true
     overlay_files:
-      - reapply_overlays: false
+      - reapply_overlays: true
       - repo: overlays/movies
     radarr:
       url: http://radarr:7878/
@@ -51,6 +51,58 @@ libraries:
         add_blank_entries: true
     settings:
       asset_directory: config/assets/movies
+  Movies 4K:
+    collection_files:
+      - repo: movies/awards
+        asset_directory: config/assets/awards
+      - repo: movies/movies
+        asset_directory: config/assets/collections
+      - repo: movies/hidden
+        asset_directory: config/assets/collections
+      - repo: movies/tmdb
+        asset_directory: config/assets/collections
+      - repo: charts
+        asset_directory: config/assets/charts
+      - repo: movies/studios
+        asset_directory: config/assets/studios
+      - repo: movies/people
+        asset_directory: config/assets/people
+      - repo: movies/trakt
+        asset_directory: config/assets/collections
+      - repo: streaming
+        asset_directory: config/assets/streaming
+      - repo: movies/seasonal
+        asset_directory: config/assets/seasonal
+    remove_overlays: true
+    overlay_files:
+      - reapply_overlays: true
+      - repo: overlays/movies
+    radarr:
+      url: http://radarr4k:7878/
+      token: 197ae68cc39348f9811d728fd12c8048
+      add_existing: false
+      add_missing: false
+      search: false
+      monitor: true
+      availability: released
+      root_folder_path:
+      quality_profile: UHD Bluray + WEB
+      upgrade_existing: false
+      monitor_existing: false
+      ignore_cache: false
+      radarr_path: /data/media/movies-4k
+      plex_path: /media/movies-4k
+    operations:
+      assets_for_all: true
+      split_duplicates: false
+      content_rating_mapper:
+        gb/12A: gb/12
+      metadata_backup:
+        path: config/metadata/movies-4k.yml
+        sync_tags: true
+        add_blank_entries: true
+    settings:
+      asset_directory: config/assets/movies-4k
   TV Shows:
     collection_files:
       - repo: tv/tv
@@ -67,9 +119,9 @@ libraries:
         asset_directory: config/assets/seasonal
     metadata_files:
       - repo: tv/metadata
-    remove_overlays: false
+    remove_overlays: true
     overlay_files:
-      - reapply_overlays: false
+      - reapply_overlays: true
       - repo: overlays/tv
     sonarr:
       url: http://sonarr:8989
@@ -79,7 +131,7 @@ libraries:
       search: false
       cutoff_search: false
       monitor: all
-      root_folder_path: 
+      root_folder_path: /data/media/tv
       quality_profile: WEB-1080p
       language_profile: English
       upgrade_existing: false
@@ -87,8 +139,8 @@ libraries:
       ignore_cache: false
       series_type: standard
       season_folder: true
-      sonarr_path:
-      plex_path:
+      sonarr_path: /data/media/tv
+      plex_path: /media/tv
     operations:
       assets_for_all: true
       split_duplicates: false
@@ -101,6 +153,104 @@ libraries:
         add_blank_entries: true
     settings:
       asset_directory: config/assets/tv
+  TV Shows 4K:
+    collection_files:
+      - repo: tv/tv
+        asset_directory: config/assets/collections
+      - repo: tv/hidden
+        asset_directory: config/assets/collections
+      - repo: tv/trakt
+        asset_directory: config/assets/collections
+      - repo: charts
+        asset_directory: config/assets/charts
+      - repo: streaming
+        asset_directory: config/assets/streaming
+      - repo: tv/seasonal
+        asset_directory: config/assets/seasonal
+    metadata_files:
+      - repo: tv/metadata
+    remove_overlays: true
+    overlay_files:
+      - reapply_overlays: true
+      - repo: overlays/tv
+    sonarr:
+      url: http://sonarr4k:8989
+      token: 23c74f137779493f9b8fa3e73e5302fa
+      add_existing: false
+      add_missing: false
+      search: false
+      cutoff_search: false
+      monitor: all
+      root_folder_path: /data/tv-4k
+      quality_profile: WEB-2160p
+      language_profile: English
+      upgrade_existing: false
+      monitor_existing: false
+      ignore_cache: false
+      series_type: standard
+      season_folder: true
+      sonarr_path: /data/tv-4k
+      plex_path: /media/tv-4k
+    operations:
+      assets_for_all: true
+      split_duplicates: false
+      item_tmdb_season_titles: true
+      content_rating_mapper:
+        gb/12A: gb/12
+      metadata_backup:
+        path: config/metadata/tv-4k.yml
+        sync_tags: true
+        add_blank_entries: true
+    settings:
+      asset_directory: config/assets/tv-4k
+  Anime:
+    collection_files:
+      - repo: anime/anime
+        asset_directory: config/assets/collections
+      - repo: anime/hidden
+        asset_directory: config/assets/collections
+      - repo: anime/trakt
+        asset_directory: config/assets/collections
+      - repo: charts
+        asset_directory: config/assets/charts
+      - repo: streaming
+        asset_directory: config/assets/streaming
+    metadata_files:
+      - repo: anime/metadata
+    remove_overlays: true
+    overlay_files:
+      - reapply_overlays: true
+      - repo: overlays/anime
+    sonarr:
+      url: http://sonarr:8989
+      token: f92edffb5e7e4cbdb64561a4d417c467
+      add_existing: false
+      add_missing: false
+      search: false
+      cutoff_search: false
+      monitor: all
+      root_folder_path: /data/anime
+      quality_profile: "[Anime] Remux-1080p"
+      language_profile: English
+      upgrade_existing: false
+      monitor_existing: false
+      ignore_cache: false
+      series_type: anime
+      season_folder: true
+      sonarr_path: /data/anime
+      plex_path: /anime
+    operations:
+      assets_for_all: true
+      split_duplicates: false
+      item_tmdb_season_titles: true
+      content_rating_mapper:
+        gb/12A: gb/12
+      metadata_backup:
+        path: config/metadata/anime.yml
+        sync_tags: true
+        add_blank_entries: true
+    settings:
+      asset_directory: config/assets/anime
 playlist_files:
   - repo: playlists
     asset_directory: config/assets/playlists
@@ -117,7 +267,7 @@ settings:
   save_missing: true
   run_again_delay: 2
   missing_only_released: true
-  delete_below_minimum: false
+  delete_below_minimum: true
   notifiarr_collection_creation: true
   notifiarr_collection_addition: true
   notifiarr_collection_removing: true
@@ -131,12 +281,12 @@ settings:
   show_options: false
   dimensional_asset_rename: true
   download_url_assets: true
-  minimum_items: 2
+  minimum_items: 1
   verify_ssl: true
   default_collection_order: release
   item_refresh_delay: 0
   playlist_sync_to_users: all
-  custom_repo: https://raw.githubusercontent.com/mikenobbs/Kometa-Configs/main/configs/
+  custom_repo: https://raw.githubusercontent.com/chrismsykes/Kometa-Configs/main/configs/
   show_missing_episode_assets: false
   show_asset_not_needed: false
   prioritize_assets: true
@@ -165,7 +315,7 @@ webhooks:
   delete: notifiarr
 plex:
   url: https://plex:32400
-  token: 
+  token: Fsh-YJy89z49m6TxB5t5
   timeout: 120
   clean_bundles: true
   empty_trash: true
@@ -179,23 +329,33 @@ tmdb:
   region: US
 tautulli:
   url: http://tautulli:8181
-  apikey: 
+  apikey: MXideIDhzG6dUfZD2HSgMHHPQFS1TkJG
 omdb:
-  apikey: 
+  apikey: d0767301
   cache_expiration: 60
 mdblist:
-  apikey: 
+  apikey: 4n8y7wqtst1yk594lrqoyr2no
   cache_expiration: 60
 notifiarr:
-  apikey:
+  apikey: 6579b0bc-f86a-49cb-8ea7-f9e86b7d80cc
 trakt:
   client_id: 1b1dcc020001dc373180766a981e5e7ed606e058c8936904cc830ead71cd67f7
   client_secret: 23595550e2785e33541d3e6375fc946f251591a3234e7ba5e69253ec1eae8fe8
   authorization:
-    access_token:
-    token_type:
-    expires_in: 
-    refresh_token:
-    scope:
-    created_at:
+    access_token: b8cec15ed7dd75be07077ff9ee70bf1166efee12c2a8c4cdb7f04b41f9eb9abd
+    token_type: Bearer
+    expires_in: 86399
+    refresh_token: 8ea1e7b27c44ab296e7813792baf6dd9213f5131c23c0d7ede72e50686b187ac
+    scope: public
+    created_at: 1751730403
   pin:
+mal:
+  client_id: 513e2542a7f930c9ca21e018bfe6a7d4
+  client_secret: 63eb9c6855674a016c4895271b12eefbd3fab13fd6b888aaa152c9eb69c44c82
+  authorization:
+    access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjU0YWQwMjllYTM3ZGJlNWRjMjk5ZmMwNzJhZDFmNGJmNjE3ZjA0NDVjNjZlNmEzZTI0Yzc4MjM2MzNiZTNjYTU1OWNjYjljN2U3ZjBmOTVlIn0.eyJhdWQiOiI1MTNlMjU0MmE3ZjkzMGM5Y2EyMWUwMThiZmU2YTdkNCIsImp0aSI6IjU0YWQwMjllYTM3ZGJlNWRjMjk5ZmMwNzJhZDFmNGJmNjE3ZjA0NDVjNjZlNmEzZTI0Yzc4MjM2MzNiZTNjYTU1OWNjYjljN2U3ZjBmOTVlIiwiaWF0IjoxNzUxNzM1NzY1LCJuYmYiOjE3NTE3MzU3NjUsImV4cCI6MTc1NDQxNDE2NSwic3ViIjoiOTc4NSIsInNjb3BlcyI6W119.O3FbMThCUPESUZIIoRat9NwKlgIm-3JjIDH4ggmW_r1sVbccoWa1j0D_g_3vWT2lRg8UsXjbNLBYmYNfNh0g8070HiZweYtoJPe-uCWK6mjOpXNRmVChjohAWSEkUSP8Q70GqoCN6mYA5VIoQw-_P9PGQL0euBE2QJvSQhvbBeUMsZXldbuJCdr0VvmxTJAd7Z3CRhjyWgB_yUObvY-NP0yO6kNvI4iRtQr9yELuOMJwak30e9hFHj8_dte9_H1HyEu-5MC6Eh_OpC6Tq6XQABNvrOdsE32l9gRxwR4U9uGY7T2DuVgyIQ_PVNWCSPAAKT8W0-5i2xpd1RooMZs6Cw
+    token_type: Bearer
+    expires_in: 2678400
+    refresh_token: def50200616f733c36b4b3f824b050409aa406f2b77353b43c432dace0f74646ad43ba8c43439d69a827d337984d9fc2ea3c549bc353922ab4654225ccce3adc7667373ded3f5d417f5fc77e954a6f0f66b296f1bb29b7ca1932c4658dbf06805cc624a9c62e93afa9f9dd3f56f831dd12c7b1f9245995877e434851ad8d272e265aed1a22123e7ddf70bd4689ccb0e18e093d20b1f1fb69c6d596a950de9de83b10ce49ad26f2e5878ed36544ceda6f598a0c3b780b087a02e0ebf1df3a910f93d7c6887e555834614d52771a0b650fb5192a69e9ac14d019a4f8a0eeb648fea266987e52b8bcc66bec093c85d3182e18621164a16f84ac9ac9c05f632848d27dd28a8c500ffa931067295611e69a93df0e844e25c200549ba3bff512cc347ba0d6832e30182d3750d2ecd0603c9d2185e8828c0142e55f9bad41f35ac7fed7d6221a4407cb9b54ed48a152eff550d28191e004b5c4def372edb8abb7520adb4a1b5c48dbd986074640833b09ad1272ca79e69f9d1f4da331b6b736806ab720e67f0d0dd5
+  localhost_url: http://localhost/?code=def50200fce65bbb85f4500fbd28c262100dbe8309486e90a79ca6d00f0737fb87c71caceb65e34ff9d9fb2eaa77b2cadf662eebc2d766e3f5fccbb7b490c65700c3795d6089229e68372edec3438f06189ff356133ca8ad357d0d37e8b49e27fcbf76091b37212c31cd6e1529064ddda961bdf39c47c9e31666b556b58ae874319668fb9dea4110b09e3f33a17c38856dc2f08aac7f202f4df49e08b708567acfbe30aa5af2ce0394f6ce841079e396e1524f7bb8e0f37e113fcd27696b4c10cc7294b6802c227044d8fc9d7187baa11cf3e90c5f6eed8f7831eeb51030510f931d9244e504dd9ff3894979b2ca89866dd79b85d5fa3b661fb52f437db1aa26e22b874fa054bfaf9bb5a9e4a6ecf37ae504af4daac2bab42a16ea68bc1fb99f15750cf62c1cc482f96a044b95189a06d145c05d99a2d5c0a3cd92b25ae8ac6ee2f5ec0b11fc5c984f27dcd3aeb5508de7d84cb90613ded510bf4318c64635d6c4da4de6279ae9c950ed4749905cd8c5ab7f2a989591dc7be058a4acba0d357f46cc7d45dd04136f972341765220b33049bab4bfd8538974db15080035a2b25ace4cb6f95352ca7b61a1d0317a820f839f1b770b84ff1f3341f1fb2c57d3e177e28db0691a92ad00803689bd75ad2f95fdcfb49d3099708d8871637f8274315aed139500a0aa
+  cache_expiration: 60

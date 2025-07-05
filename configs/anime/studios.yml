@@ -1,0 +1,28 @@
+templates:
+  studio:
+    smart_label:
+      sort_by: release.asc
+      all:
+        label: <<smart_label>>
+    optional:
+      - company
+      - trakt
+      - radarr
+    tmdb_company: <<company>>
+    trakt_list: https://trakt.tv/users/<<trakt>>
+    radarr_add_missing: <<radarr>>
+    sort_title: +<<collection_name>>
+
+collections:
+  Toei Animation:
+    template: {name: studio, company: 5542, radarr: false}
+  MAPPA:
+    template: {name: studio, company: 21444, radarr: false}
+  Bones:
+    template: {name: studio, company: 2849, radarr: false}
+  Madhouse:
+    template: {name: studio, company: 3464 , radarr: false}
+  Kyoto Animation:
+    template: {name: studio, company: 5438 , radarr: false}
+  Sunrise:
+    template: {name: studio, company: 3153, radarr: false}

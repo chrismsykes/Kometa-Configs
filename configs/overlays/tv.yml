@@ -18,3 +18,19 @@ overlays:
       url: https://www.imdb.com/search/title/?series=tt0121955&sort=user_rating,desc
       limit: 100
     builder_level: episode
+  
+  Family Guy Top 100:
+    overlay:
+      name: IMDb-Top-100
+    imdb_list: 
+      url: https://m.imdb.com/search/title/?series=tt0182576&sort=user_rating,desc
+      limit: 100
+    builder_level: episode
+
+  American Dad Top 100:
+    overlay:
+      name: IMDb-Top-100
+    imdb_list: 
+      url: https://www.imdb.com/search/title/?series=tt0397306&sort=user_rating,desc
+      limit: 100
+    builder_level: episode

@@ -25,8 +25,6 @@ collections:
     template: {name: director, person: "1223, 1224"}
     summary: Joel and Ethan Coen, collectively referred to as the Coen Brothers, are American film directors, producers, screenwriters, and editors. Their films span many genres and styles, which they frequently subvert or parody.
     sort_title: ++Coen Brothers
-  Leonardo DiCaprio:
-    template: {name: actor, person: 6193}
   Martin Scorsese:
     template: {name: director, person: 1032}
   Quentin Tarantino:

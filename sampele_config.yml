@@ -21,12 +21,12 @@ libraries:
         asset_directory: config/assets/streaming
       - repo: movies/seasonal
         asset_directory: config/assets/seasonal
-    remove_overlays: false
+    remove_overlays: true
     overlay_files:
-      - reapply_overlays: false
+      - reapply_overlays: true
       - repo: overlays/movies
     radarr:
-      url: http://radarr:7878/radarr
+      url: http://radarr:7878/
       token: 
       add_existing: false
       add_missing: false
@@ -34,12 +34,12 @@ libraries:
       monitor: true
       availability: released
       root_folder_path:
-      quality_profile: HD 1080p
+      quality_profile: HD Bluray + WEB
       upgrade_existing: false
       monitor_existing: false
       ignore_cache: false
-      radarr_path:
-      plex_path:
+      radarr_path: /data/media/movies
+      plex_path: /media/movies
     operations:
       assets_for_all: true
       split_duplicates: false
@@ -51,6 +51,58 @@ libraries:
         add_blank_entries: true
     settings:
       asset_directory: config/assets/movies
+  Movies 4K:
+    collection_files:
+      - repo: movies/awards
+        asset_directory: config/assets/awards
+      - repo: movies/movies
+        asset_directory: config/assets/collections
+      - repo: movies/hidden
+        asset_directory: config/assets/collections
+      - repo: movies/tmdb
+        asset_directory: config/assets/collections
+      - repo: charts
+        asset_directory: config/assets/charts
+      - repo: movies/studios
+        asset_directory: config/assets/studios
+      - repo: movies/people
+        asset_directory: config/assets/people
+      - repo: movies/trakt
+        asset_directory: config/assets/collections
+      - repo: streaming
+        asset_directory: config/assets/streaming
+      - repo: movies/seasonal
+        asset_directory: config/assets/seasonal
+    remove_overlays: true
+    overlay_files:
+      - reapply_overlays: true
+      - repo: overlays/movies
+    radarr:
+      url: http://radarr4k:7878/
+      token: 
+      add_existing: false
+      add_missing: false
+      search: false
+      monitor: true
+      availability: released
+      root_folder_path:
+      quality_profile: UHD Bluray + WEB
+      upgrade_existing: false
+      monitor_existing: false
+      ignore_cache: false
+      radarr_path: /data/media/movies-4k
+      plex_path: /media/movies-4k
+    operations:
+      assets_for_all: true
+      split_duplicates: false
+      content_rating_mapper:
+        gb/12A: gb/12
+      metadata_backup:
+        path: config/metadata/movies-4k.yml
+        sync_tags: true
+        add_blank_entries: true
+    settings:
+      asset_directory: config/assets/movies-4k
   TV Shows:
     collection_files:
       - repo: tv/tv
@@ -67,28 +119,28 @@ libraries:
         asset_directory: config/assets/seasonal
     metadata_files:
       - repo: tv/metadata
-    remove_overlays: false
+    remove_overlays: true
     overlay_files:
-      - reapply_overlays: false
+      - reapply_overlays: true
       - repo: overlays/tv
     sonarr:
-      url: http://sonarr:8989/sonarr
+      url: http://sonarr:8989
       token: 
       add_existing: false
       add_missing: false
       search: false
       cutoff_search: false
       monitor: all
-      root_folder_path: 
-      quality_profile: HD 1080p
+      root_folder_path: /data/media/tv
+      quality_profile: WEB-1080p
       language_profile: English
       upgrade_existing: false
       monitor_existing: false
       ignore_cache: false
       series_type: standard
       season_folder: true
-      sonarr_path:
-      plex_path:
+      sonarr_path: /data/media/tv
+      plex_path: /media/tv
     operations:
       assets_for_all: true
       split_duplicates: false
@@ -101,6 +153,104 @@ libraries:
         add_blank_entries: true
     settings:
       asset_directory: config/assets/tv
+  TV Shows 4K:
+    collection_files:
+      - repo: tv/tv
+        asset_directory: config/assets/collections
+      - repo: tv/hidden
+        asset_directory: config/assets/collections
+      - repo: tv/trakt
+        asset_directory: config/assets/collections
+      - repo: charts
+        asset_directory: config/assets/charts
+      - repo: streaming
+        asset_directory: config/assets/streaming
+      - repo: tv/seasonal
+        asset_directory: config/assets/seasonal
+    metadata_files:
+      - repo: tv/metadata
+    remove_overlays: true
+    overlay_files:
+      - reapply_overlays: true
+      - repo: overlays/tv
+    sonarr:
+      url: http://sonarr4k:8989
+      token: 
+      add_existing: false
+      add_missing: false
+      search: false
+      cutoff_search: false
+      monitor: all
+      root_folder_path: /data/tv-4k
+      quality_profile: WEB-2160p
+      language_profile: English
+      upgrade_existing: false
+      monitor_existing: false
+      ignore_cache: false
+      series_type: standard
+      season_folder: true
+      sonarr_path: /data/tv-4k
+      plex_path: /media/tv-4k
+    operations:
+      assets_for_all: true
+      split_duplicates: false
+      item_tmdb_season_titles: true
+      content_rating_mapper:
+        gb/12A: gb/12
+      metadata_backup:
+        path: config/metadata/tv-4k.yml
+        sync_tags: true
+        add_blank_entries: true
+    settings:
+      asset_directory: config/assets/tv-4k
+  Anime:
+    collection_files:
+      - repo: anime/anime
+        asset_directory: config/assets/collections
+      - repo: anime/hidden
+        asset_directory: config/assets/collections
+      - repo: anime/trakt
+        asset_directory: config/assets/collections
+      - repo: charts
+        asset_directory: config/assets/charts
+      - repo: streaming
+        asset_directory: config/assets/streaming
+    metadata_files:
+      - repo: anime/metadata
+    remove_overlays: true
+    overlay_files:
+      - reapply_overlays: true
+      - repo: overlays/anime
+    sonarr:
+      url: http://sonarr:8989
+      token: 
+      add_existing: false
+      add_missing: false
+      search: false
+      cutoff_search: false
+      monitor: all
+      root_folder_path: /data/anime
+      quality_profile: "[Anime] Remux-1080p"
+      language_profile: English
+      upgrade_existing: false
+      monitor_existing: false
+      ignore_cache: false
+      series_type: anime
+      season_folder: true
+      sonarr_path: /data/anime
+      plex_path: /anime
+    operations:
+      assets_for_all: true
+      split_duplicates: false
+      item_tmdb_season_titles: true
+      content_rating_mapper:
+        gb/12A: gb/12
+      metadata_backup:
+        path: config/metadata/anime.yml
+        sync_tags: true
+        add_blank_entries: true
+    settings:
+      asset_directory: config/assets/anime
 playlist_files:
   - repo: playlists
     asset_directory: config/assets/playlists
@@ -117,7 +267,7 @@ settings:
   save_missing: true
   run_again_delay: 2
   missing_only_released: true
-  delete_below_minimum: false
+  delete_below_minimum: true
   notifiarr_collection_creation: true
   notifiarr_collection_addition: true
   notifiarr_collection_removing: true
@@ -131,12 +281,12 @@ settings:
   show_options: false
   dimensional_asset_rename: true
   download_url_assets: true
-  minimum_items: 2
+  minimum_items: 1
   verify_ssl: true
   default_collection_order: release
   item_refresh_delay: 0
   playlist_sync_to_users: all
-  custom_repo: https://raw.githubusercontent.com/mikenobbs/Kometa-Configs/main/configs/
+  custom_repo: https://raw.githubusercontent.com/chrismsykes/Kometa-Configs/main/configs/
   show_missing_episode_assets: false
   show_asset_not_needed: false
   prioritize_assets: true
@@ -164,38 +314,48 @@ webhooks:
   version:
   delete: notifiarr
 plex:
-  url: http://plex:32400
+  url: https://plex:32400
   token: 
   timeout: 120
   clean_bundles: true
   empty_trash: true
   optimize: true
   db_cache:
-  verify_ssl:
+  verify_ssl: false
 tmdb:
   apikey: 
   language: en
   cache_expiration: 60
-  region: GB
+  region: US
 tautulli:
-  url: http://tautulli:8181/tautulli
+  url: http://tautulli:8181
   apikey: 
 omdb:
   apikey: 
-  cache_expiration: 60
+  cache_expiration: 
 mdblist:
   apikey: 
-  cache_expiration: 60
+  cache_expiration: 
 notifiarr:
-  apikey:
+  apikey: 
 trakt:
   client_id: 
   client_secret: 
   authorization:
-    access_token:
-    token_type:
+    access_token: 
+    token_type: 
     expires_in: 
-    refresh_token:
-    scope:
-    created_at:
+    refresh_token: 
+    scope: 
+    created_at: 
   pin:
+mal:
+  client_id: 
+  client_secret: 
+  authorization:
+    access_token: 
+    token_type: 
+    expires_in: 
+    refresh_token: 
+  localhost_url: 
+  cache_expiration: 60

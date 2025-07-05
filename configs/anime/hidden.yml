@@ -1,0 +1,14 @@
+######################################################
+#             Hidden TV Show Collections             #
+######################################################
+
+templates:
+  hidden:
+    optional:
+      - sort 
+    tmdb_show: <<show>>
+    minimum_items: 1
+    collection_mode: hide
+    sort_title: <<sort>>
+
+collections:
