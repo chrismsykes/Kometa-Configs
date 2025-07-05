@@ -1,0 +1,27 @@
+######################################################
+#               Streaming Collections                #
+######################################################
+
+templates:
+  streaming:
+    smart_label: 
+      sort_by: release.desc
+      all:
+        label: <<smart_label>>
+    mdblist_list: https://mdblist.com/lists/k0meta/<<key>>-originals
+    summary: Collection of <<collection_name>> Original <<library_type>>s currently streaming.
+    sort_title: +++<<collection_name>>
+
+dynamic_collections:
+  Streaming:
+    template: streaming
+    type: custom
+    data:
+      appletv: Apple TV+
+      disney: Disney+
+      hulu: Hulu
+      max: Max
+      netflix: Netflix
+      paramount: Paramount+
+      amazon: Prime Video
+    title_format: <<key_name>>

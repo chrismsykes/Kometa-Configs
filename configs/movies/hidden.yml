@@ -1,0 +1,28 @@
+######################################################
+#              Hidden Movie Collections              #
+######################################################
+
+templates:
+  hidden:
+    optional:
+      - sort
+    tmdb_movie: <<movie>>
+    minimum_items: 1
+    collection_mode: hide
+    sort_title: <<sort>>
+
+collections:
+  "Bob's Burgers":
+    template: {name: hidden, movie: 504827}
+  Buffyverse:
+    template: {name: hidden, movie: 10206}
+  Friends:
+    template: {name: hidden, movie: 691179}
+  The Full Monty:
+    template: {name: hidden, movie: 9427, sort: Full Monty}
+  The Simpsons:
+    template: {name: hidden, movie: 35, sort: Simpsons}
+  Scott Pilgrim:
+    template: {name: hidden, movie: 22538}
+  South Park:
+    template: {name: hidden, movie: 9473}

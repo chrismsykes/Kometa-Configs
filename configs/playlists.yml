@@ -1,0 +1,24 @@
+######################################################
+#                Playlist Collections                #
+######################################################
+
+templates:
+  top:
+    cache_builders: 1
+    libraries: TV Shows
+    builder_level: episode
+    imdb_search:
+      type: tv_episode
+      series: <<imdb>>
+      sort_by: rating.desc
+      limit: 100
+    sync_mode: sync
+    collection_order: custom
+
+playlists:
+  The Simpsons Top 100 Episodes:
+    template: {name: top, imdb: tt0096697}
+    summary: Top 100 episodes of The Simpsons based on IMDb user rating.
+  South Park Top 100 Episodes:
+    template: {name: top, imdb: tt0121955}
+    summary: Top 100 episodes of South Park based on IMDb user rating.
