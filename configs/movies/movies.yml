@@ -24,6 +24,11 @@ templates:
     collection_order: <<order>>
 
 collections:
+  Baby Einstein Collection:
+    trakt_list: https://trakt.tv/lists/official/baby-einstein-collection?sort=rank,asc
+    collection_order: custom       # keep the order defined on the Trakt list
+    sync_mode: sync                # sync so items removed from Trakt list are removed here too
+    collection_mode: hide_items
   Charlie Brown:
     template: {name: collection, trakt: benfishbus/lists/peanuts}
     summary: Collection of Movies and TV Specials with the beloved Peanuts characters.

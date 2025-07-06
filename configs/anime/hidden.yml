@@ -11,4 +11,4 @@ templates:
     collection_mode: hide
     sort_title: <<sort>>
 
-collections:
+# collections:
