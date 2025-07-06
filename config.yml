@@ -21,9 +21,9 @@ libraries:
         asset_directory: config/assets/streaming
       - repo: movies/seasonal
         asset_directory: config/assets/seasonal
-    remove_overlays: true
+    remove_overlays: false
     overlay_files:
-      - reapply_overlays: true
+      - reapply_overlays: false
       - repo: overlays/movies
     radarr:
       url: http://radarr:7878/
@@ -33,7 +33,7 @@ libraries:
       search: false
       monitor: true
       availability: released
-      root_folder_path:
+      root_folder_path: /data/media/movies
       quality_profile: HD Bluray + WEB
       upgrade_existing: false
       monitor_existing: false
@@ -73,9 +73,9 @@ libraries:
         asset_directory: config/assets/streaming
       - repo: movies/seasonal
         asset_directory: config/assets/seasonal
-    remove_overlays: true
+    remove_overlays: false
     overlay_files:
-      - reapply_overlays: true
+      - reapply_overlays: false
       - repo: overlays/movies
     radarr:
       url: http://radarr4k:7878/
@@ -85,7 +85,7 @@ libraries:
       search: false
       monitor: true
       availability: released
-      root_folder_path:
+      root_folder_path: /data/media/movies-4k
       quality_profile: UHD Bluray + WEB
       upgrade_existing: false
       monitor_existing: false
@@ -117,11 +117,14 @@ libraries:
         asset_directory: config/assets/streaming
       - repo: tv/seasonal
         asset_directory: config/assets/seasonal
+    playlist_files:
+      - repo: tv/playlists
+        asset_directory: config/assets/playlists
     metadata_files:
       - repo: tv/metadata
-    remove_overlays: true
+    remove_overlays: false
     overlay_files:
-      - reapply_overlays: true
+      - reapply_overlays: false
       - repo: overlays/tv
     sonarr:
       url: http://sonarr:8989
@@ -169,9 +172,9 @@ libraries:
         asset_directory: config/assets/seasonal
     metadata_files:
       - repo: tv/metadata
-    remove_overlays: true
+    remove_overlays: false
     overlay_files:
-      - reapply_overlays: true
+      - reapply_overlays: false
       - repo: overlays/tv
     sonarr:
       url: http://sonarr4k:8989
@@ -181,7 +184,7 @@ libraries:
       search: false
       cutoff_search: false
       monitor: all
-      root_folder_path: /data/tv-4k
+      root_folder_path: /data/media/tv-4k
       quality_profile: WEB-2160p
       language_profile: English
       upgrade_existing: false
@@ -189,7 +192,7 @@ libraries:
       ignore_cache: false
       series_type: standard
       season_folder: true
-      sonarr_path: /data/tv-4k
+      sonarr_path: /data/media/tv-4k
       plex_path: /media/tv-4k
     operations:
       assets_for_all: true
@@ -213,13 +216,13 @@ libraries:
         asset_directory: config/assets/collections
       - repo: charts
         asset_directory: config/assets/charts
-      - repo: streaming
-        asset_directory: config/assets/streaming
+      - repo: anime/studios
+        asset_directory: config/assets/studios
     metadata_files:
       - repo: anime/metadata
-    remove_overlays: true
+    remove_overlays: false
     overlay_files:
-      - reapply_overlays: true
+      - reapply_overlays: false
       - repo: overlays/anime
     sonarr:
       url: http://sonarr:8989
@@ -251,9 +254,6 @@ libraries:
         add_blank_entries: true
     settings:
       asset_directory: config/assets/anime
-playlist_files:
-  - repo: playlists
-    asset_directory: config/assets/playlists
 settings:
   cache: true
   cache_expiration: 60
